@@ -3,7 +3,7 @@ import queue
 from tabulate import tabulate
 
 
-def init_readfile(filename:str):
+def readfile(filename:str):
         trongso = {}
         ke = {}
 
@@ -31,7 +31,7 @@ def Search(trongso, ke, start, end):
 
         while L:
             u, path = L.pop(0)
-
+ 
             if u == end:
                 print("Tìm kiếm thành công")
                 row.append([u + str(trongso[u]), "TTKT-Dừng", None])
@@ -41,7 +41,7 @@ def Search(trongso, ke, start, end):
                 new_path = path + [v]
                 L.append((v, new_path))
                 L.sort(key=lambda x: trongso.get(x[0]))
-            row.append([u+str(trongso[u]), ", ".join([i + str(trongso[i]) for i in ke[u]]),", ".join(i1 + str(trongso[i1]) for i1,_ in L)])
+            row.append([u+str(trongso[u]), ", ".join([i + str(trongso[i]) for i in ke[u]]),", ".join(i1 + str(trongso[i1]) for i1,i2 in L)])
 
 
 def printFile(filename, content):
@@ -50,7 +50,7 @@ def printFile(filename, content):
         file.close()
 
 if __name__ == '__main__':
-    trongso, ke, start, end = init_readfile("BestFistSearch\inputbfs.txt")
+    trongso, ke, start, end = readfile("BestFistSearch\inputbfs1.txt")
     print(Search(trongso, ke, start, end))
     printFile("BestFistSearch\output1.txt",Search(trongso, ke, start, end))
 
