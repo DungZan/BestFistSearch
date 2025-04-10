@@ -3,9 +3,7 @@ import queue
 from tabulate import tabulate
 
 
-class BestFistSearch:
-    @staticmethod
-    def init_readfile(filename:str):
+def init_readfile(filename:str):
         trongso = {}
         ke = {}
 
@@ -27,8 +25,7 @@ class BestFistSearch:
             start, end = file.readline().strip().split()
         return trongso, ke, start, end
 
-    @staticmethod
-    def Search(trongso, ke, start, end):
+def Search(trongso, ke, start, end):
         row =[]
         L = [(start, [start])]
 
@@ -46,14 +43,14 @@ class BestFistSearch:
                 L.sort(key=lambda x: trongso.get(x[0]))
             row.append([u+str(trongso[u]), ", ".join([i + str(trongso[i]) for i in ke[u]]),", ".join(i1 + str(trongso[i1]) for i1,_ in L)])
 
-    @staticmethod
-    def printFile(filename, content):
+
+def printFile(filename, content):
         file = open(filename, "w", encoding="utf-8")
         file.write(content)
         file.close()
 
 if __name__ == '__main__':
-    trongso, ke, start, end = BestFistSearch.init_readfile("BestFistSearch\inputbfs.txt")
-    print(BestFistSearch.Search(trongso, ke, start, end))
-    BestFistSearch.printFile("BestFistSearch\output1.txt",BestFistSearch.Search(trongso, ke, start, end))
+    trongso, ke, start, end = init_readfile("BestFistSearch\inputbfs.txt")
+    print(Search(trongso, ke, start, end))
+    printFile("BestFistSearch\output1.txt",Search(trongso, ke, start, end))
 
