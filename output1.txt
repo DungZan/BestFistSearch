@@ -6,4 +6,4 @@ D7               G13, H3          H3, F8, E10, G13, B15
 H3               I5               I5, F8, E10, G13, B15
 I5               K0               K0, F8, E10, G13, B15
 K0               TTKT-Dừng
-Đường đi là: A20 D7 H3 I5 K0
+Đường đi là: A20 => D7 => H3 => I5 => K0
