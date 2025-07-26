@@ -49,7 +49,7 @@ def printFile(filename, content):
         file.close()
 
 if __name__ == '__main__':
-    trongso, ke, start, end = readfile("BestFistSearch\inputbfs1.txt")
+    trongso, ke, start, end = readfile("BestFistSearch/inputbfs1.txt")
     #print(Search(trongso, ke, start, end))
-    printFile("BestFistSearch\output1.txt",Search(trongso, ke, start, end))
+    printFile("BestFistSearch/output1.txt",Search(trongso, ke, start, end))
 
